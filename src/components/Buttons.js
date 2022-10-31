@@ -1,9 +1,9 @@
 
 
-function Buttons() {
+function Buttons(props) {
   return (
     <div className="button-number">
-      <p>1</p>
+      <p>{props.label}</p>
     </div>
   );
 }

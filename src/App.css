@@ -1,13 +1,45 @@
 /*  -------- BODY ------------- */
 
+.app{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+}
+
+.calculator{
+  align-items: center;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+}
 
 
+.display{
+  background-color: yellow;
+  width: 300px;
+}
 
 
 /*  -------- BUTTONS ------------- */
 
+.buttons-array{
+  align-items: center;
+  background-color: green;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 300px;
+}
+
 .button-number{
   background-color: purple;
-  height: 3rem;
-  width: 3rem;
+  height: 50px;
+  margin: 5px ;
+  width: 60px;
 }
+
+
