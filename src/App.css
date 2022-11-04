@@ -17,10 +17,7 @@
 }
 
 
-.display{
-  background-color: yellow;
-  width: 300px;
-}
+
 
 
 /*  -------- BUTTONS ------------- */
@@ -43,3 +40,22 @@
 }
 
 
+
+/*  -------- DISPLAY ------------- */
+
+.display{
+  background-color: yellow;
+  min-height: 100px;
+  width: 300px;
+}
+
+.input{
+  display: inline-block;
+  margin: 5% 0 0 5%;
+}
+
+#answer{
+  display: block;
+  padding-right: 5%;
+  text-align: right;
+}

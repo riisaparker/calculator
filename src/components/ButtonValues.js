@@ -20,7 +20,7 @@ const ButtonValues  = [
   {
     id:3, 
     label: "÷", 
-    value: "divide",
+    value: "/",
     className:"button-process" 
   },
   {
@@ -44,7 +44,7 @@ const ButtonValues  = [
   {
     id:7, 
     label: "x", 
-    value: "multiply",
+    value: "x",
     className:"button-process" 
   },
   {
@@ -68,7 +68,7 @@ const ButtonValues  = [
   {
     id:11, 
     label: "-", 
-    value: "minus",
+    value: "-",
     className:"button-process" 
   },
   {
@@ -92,7 +92,7 @@ const ButtonValues  = [
   {
     id:15, 
     label: "+", 
-    value: "add",
+    value: "+",
     className:"button-process" 
   },
   {
