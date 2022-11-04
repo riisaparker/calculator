@@ -4,12 +4,12 @@ import ButtonValues from './ButtonValues';
 function ButtonsArray(props) {
 
   // When a button is pressed - push it to the buttonsPressed array state
-  function clickedButton(clickedValue, clickedLabel, clickedId){
-
+  function clickedButton(clickedValue, clickedId){
     switch (clickedId){
       case 18 :
         console.log("Pressed equals");
         props.doCalculation()
+        props.setNewCalc(true)
         break;
       case 0 :
         console.log("Pressed clear");
@@ -18,17 +18,27 @@ function ButtonsArray(props) {
         console.log("Pressed del")
         break;
       default :
-      calculationArray(clickedValue, clickedLabel, props.setButtonsPressed, props.buttonsPressed)
+      calculationArray(clickedValue,  props.setButtonsPressed, props.buttonsPressed)
     }
   }
 
   // Function to set the state of the calcualtion
     //  setter = setButtonsPressed      state = buttonsPressed
-  function calculationArray(clickedValue, clickedLabel, setter, state){
+  function calculationArray(clickedValue, setter, state){
     const tempObject = clickedValue;
-        setter([...state, tempObject])
+    setter([...state, tempObject])
   }
 
+
+  // Function to check if it's a new calcl
+  function resetFunc (clickedValue, clickedId){
+    if (props.newCalc == true){
+      props.setButtonsPressed([clickedValue])
+      props.setNewCalc(false)
+    }else{
+      clickedButton(clickedValue, clickedId)
+    }
+  }
 
 
   return (
@@ -39,7 +49,7 @@ function ButtonsArray(props) {
           id={button.id}
           label={button.label} 
           value={button.value}
-          clicked={clickedButton}
+          clicked={resetFunc}
           >   
         </Buttons>
       })}

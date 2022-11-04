@@ -9,12 +9,17 @@ function App() {
   // Set state for buttons pressed 
   const [buttonsPressed, setButtonsPressed] = useState([]);
 
+  // Set state if it's a new calculation 
+  const [newCalc, setNewCalc] = useState(false);
+
   // Set state for expression 
   const [expression , setExpression] = useState('');
-  console.log(buttonsPressed)
 
   // Set state for answer
   const [answer , setAnswer] = useState();
+
+
+
 
   // Set the expression
   const  findExpression = () => {
@@ -22,7 +27,6 @@ function App() {
       setExpression(expressionJoin); 
     }
   
-
   
   // Do the calcualtion when the expression changes 
   useEffect(() => {
@@ -41,11 +45,18 @@ function App() {
   }, [expression]);
 
 
+
   return (
     <div className='app'>
       <div className='calculator'>
         <Display buttonsPressed={buttonsPressed} answer={answer}></Display>
-        <ButtonsArray buttonsPressed={buttonsPressed} setButtonsPressed={setButtonsPressed} doCalculation={findExpression} ></ButtonsArray>
+        <ButtonsArray 
+        buttonsPressed={buttonsPressed} 
+        setButtonsPressed={setButtonsPressed} 
+        doCalculation={findExpression} 
+        newCalc={newCalc}
+        setNewCalc={setNewCalc}
+        ></ButtonsArray>
         </div>
       </div>
   );

@@ -3,10 +3,8 @@
 
 function Display(props) {
 
-
   return (
     <div className='display'>
-     
       {props.buttonsPressed.map((buttonPressed, buttonPressedIndex) => {
         return <p className="input" key={buttonPressedIndex}> {buttonPressed} </p>
       })}
