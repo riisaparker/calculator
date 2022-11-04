@@ -13,6 +13,8 @@ function ButtonsArray(props) {
         break;
       case 0 :
         console.log("Pressed clear");
+        props.setButtonsPressed([])
+        props.setAnswer()
         break;
       case 1 : 
         console.log("Pressed del")
@@ -33,8 +35,14 @@ function ButtonsArray(props) {
   // Function to check if it's a new calcl
   function resetFunc (clickedValue, clickedId){
     if (props.newCalc == true){
+      if(clickedId == 0){
+        props.setButtonsPressed([])
+        props.setAnswer()
+        props.setNewCalc(false)
+      }else{
       props.setButtonsPressed([clickedValue])
       props.setNewCalc(false)
+      }
     }else{
       clickedButton(clickedValue, clickedId)
     }

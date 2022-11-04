@@ -56,6 +56,7 @@ function App() {
         doCalculation={findExpression} 
         newCalc={newCalc}
         setNewCalc={setNewCalc}
+        setAnswer={setAnswer}
         ></ButtonsArray>
         </div>
       </div>
