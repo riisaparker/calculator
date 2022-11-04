@@ -1,5 +1,13 @@
 /*  -------- BODY ------------- */
 
+body{
+  background-color: #2b2d42;
+}
+
+p{
+  font-size: 1.5rem;
+}
+
 .app{
   align-items: center;
   display: flex;
@@ -9,7 +17,7 @@
 
 .calculator{
   align-items: center;
-  background-color: red;
+  border-radius: 3px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +32,8 @@
 
 .buttons-array{
   align-items: center;
-  background-color: green;
+  background-color: #edf2f4;
+  border-radius: 3px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -33,19 +42,29 @@
 }
 
 .button-number{
-  background-color: purple;
+  border: 0.5px solid #ef233c;
+  box-shadow: 2px 3px #ef233c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 50px;
   margin: 5px ;
   width: 60px;
 }
 
+.button-number:hover{
+  background-color: #2b2d42;
+  color: #d90429;
+  cursor: pointer;
+}
 
 
 /*  -------- DISPLAY ------------- */
 
 .display{
-  background-color: yellow;
+  background-color: #8d99ae;
   min-height: 100px;
+  border-radius: 3px;
   width: 300px;
 }
 
@@ -58,4 +77,5 @@
   display: block;
   padding-right: 5%;
   text-align: right;
+  color: #d90429;
 }

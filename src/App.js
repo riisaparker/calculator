@@ -49,13 +49,14 @@ function App() {
 
 
 
-    // Do the calcualtion when the expression changes 
+    // Do the calcualtion when sqrt is pressed
     useEffect(() => {
       async function getSqrt(){
         try{
           const expressionJoin = buttonsPressed.join('')
           let mathAnswer = sqrt(expressionJoin)
           setAnswer(mathAnswer)
+          setNewCalc(true)
         } 
         // Catch any errors
         catch (err){
