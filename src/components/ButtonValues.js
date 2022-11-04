@@ -44,7 +44,7 @@ const ButtonValues  = [
   {
     id:7, 
     label: "x", 
-    value: "x",
+    value: "*",
     className:"button-process" 
   },
   {

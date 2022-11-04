@@ -1,6 +1,6 @@
 import './App.css';
 import { useState , useEffect } from 'react';
-import { evaluate } from 'mathjs';
+import { evaluate, sqrt} from 'mathjs';
 import ButtonsArray from './components/ButtonsArray';
 import Display from './components/Display';
 
@@ -17,6 +17,9 @@ function App() {
 
   // Set state for answer
   const [answer , setAnswer] = useState();
+
+  // Set tstate for squareroot toggle
+  const [sqrtState, setSqrtState] = useState(false);
 
 
 
@@ -46,6 +49,23 @@ function App() {
 
 
 
+    // Do the calcualtion when the expression changes 
+    useEffect(() => {
+      async function getSqrt(){
+        try{
+          const expressionJoin = buttonsPressed.join('')
+          let mathAnswer = sqrt(expressionJoin)
+          setAnswer(mathAnswer)
+        } 
+        // Catch any errors
+        catch (err){
+          console.log(err.message)
+        }
+      };    
+      // Get the expression when a change has been detected in the expression 
+      getSqrt();
+    }, [sqrtState]);
+
   return (
     <div className='app'>
       <div className='calculator'>
@@ -57,6 +77,8 @@ function App() {
         newCalc={newCalc}
         setNewCalc={setNewCalc}
         setAnswer={setAnswer}
+        setSqrtState={setSqrtState}
+        sqrtState={sqrtState}
         ></ButtonsArray>
         </div>
       </div>

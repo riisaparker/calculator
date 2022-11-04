@@ -22,6 +22,10 @@ function ButtonsArray(props) {
         let popped = tempArray.pop();
         props.setButtonsPressed([...tempArray])
         break;
+      case 2: 
+        console.log("Pressed sqrt")
+        props.setSqrtState(!props.sqrtState)
+        break;
       default :
       calculationArray(clickedValue,  props.setButtonsPressed, props.buttonsPressed)
     }
