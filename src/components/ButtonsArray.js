@@ -18,6 +18,9 @@ function ButtonsArray(props) {
         break;
       case 1 : 
         console.log("Pressed del")
+        let tempArray = props.buttonsPressed
+        let popped = tempArray.pop();
+        props.setButtonsPressed([...tempArray])
         break;
       default :
       calculationArray(clickedValue,  props.setButtonsPressed, props.buttonsPressed)
